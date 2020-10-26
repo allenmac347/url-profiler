@@ -37,13 +37,13 @@ Error codes recieved: none
 Output for YouTube ("https://www.youtube.com/"):
 Total number of requests: 15
 Total errors: 0
-Fastest time: 0.384s
-Slowest time: 0.601s
-Median time: 0.428s
-Mode time: 0.384s
+Fastest time: 0.372s
+Slowest time: 0.464s
+Median time: 0.425s
+Mode time: 0.409s
 Percentage of requests succeeded: 100%
-Size of smallest response: 424313 bytes
-Size of biggest response: 558283 bytes
+Size of smallest response: 423049 bytes
+Size of biggest response: 550091 bytes
 Error codes recieved: none
 
 

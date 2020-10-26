@@ -178,6 +178,13 @@ fn profile_url(input_url: &str, profile_value: i32) -> i32{
                 if e.to_string().contains("CloseNotify"){
                     println!("Peer asking to close TCP connection"); 
                     println!("Can still read server response"); 
+                    println!("Read {} bytes", buf.len()); 
+                    if buf.len() < small_size{
+                        small_size = buf.len(); 
+                    }
+                    if buf.len() > big_size {
+                        big_size = buf.len(); 
+                    }
                     let shutdown_result = sock.shutdown(Shutdown::Both); 
                     match shutdown_result{
                         Ok(v) => println!("Shutdown successful: {:?}", v),
@@ -200,7 +207,6 @@ fn profile_url(input_url: &str, profile_value: i32) -> i32{
             error_codes.insert(response_number); 
             errors += 1; 
         }
-        println!("Message: {}", response_number); 
         let total_runtime = (old.duration_since(start).as_secs_f32()*1000.0).round() / 1000.0;
         println!("Status code: \r\n{}", response_number); 
         println!("Time for response: {:?}\r\n", total_runtime); 
